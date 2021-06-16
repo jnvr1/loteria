@@ -25,15 +25,15 @@
     </ion-item>  
     <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar()" class="mezclar">
     </ion-img>
-  </div>
-  <!--<ion-item *ngFor="let i of imagenesBase |keyvalue">
-    <ion-item *ngIf="i.value.mostrar">
-      <ion-img  src="{{i.value.url}}">
-
-      </ion-img>
+    <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:1:cantidad" color="transparent" >
+      <ion-item *ngIf="i.value.mostrar">
+        <ion-img  src="{{i.value.url}}">
+  
+        </ion-img>
+      </ion-item>
     </ion-item>
-  </ion-item>
--->
+    
+  </div>
   
 
 </div>

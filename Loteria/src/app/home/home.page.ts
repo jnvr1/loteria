@@ -13,13 +13,14 @@ export class HomePage implements OnInit{
   url:any="./assets/imagenes/cartas/1.jpg"
   textoDeImagene
  jugar=false
-  cantidad=0
- imagenesCopia; ran=0; audioDeFondo = new Audio();
+ cantidad
+  ran=0; audioDeFondo = new Audio();
  audioLanzamiento = new Audio()
  usados = new Array();
  IDIOMAS_PREFERIDOS = ["es-MX", "es-US", "es-ES", "es_US", "es_ES"];
  vocesDisponibles = []; 
-  
+ 
+ 
  imagenesBase = {
     0:{
       url: "./assets/imagenes/cartas/1.jpg",
@@ -93,6 +94,160 @@ export class HomePage implements OnInit{
       url: "./assets/imagenes/cartas/17.jpg",
       mostrar:false
     },
+    18:{
+      url: "./assets/imagenes/cartas/17.jpg",
+      mostrar:false
+    },
+    19:{
+      url: "./assets/imagenes/cartas/17.jpg",
+      mostrar:false
+    },
+    20:{
+      url: "./assets/imagenes/cartas/17.jpg",
+      mostrar:false
+    },
+    21:{
+      url: "./assets/imagenes/cartas/1.jpg",
+      mostrar:false
+    },
+    22:{
+      url: "./assets/imagenes/cartas/2.jpg",
+      mostrar:false
+    },
+    23:{
+      url: "./assets/imagenes/cartas/3.jpg",
+      mostrar:false
+    },
+    24:{
+      url: "./assets/imagenes/cartas/4.jpg",
+      mostrar:false
+    },
+    25:{
+      url: "./assets/imagenes/cartas/5.jpg",
+      mostrar:false
+    },
+    26:{
+      url: "./assets/imagenes/cartas/6.jpg",
+      mostrar:false
+    },
+    27:{
+      url: "./assets/imagenes/cartas/7.jpg",
+      mostrar:false
+    },
+    28:{
+      url: "./assets/imagenes/cartas/8.jpg",
+      mostrar:false
+    },
+    29:{
+      url: "./assets/imagenes/cartas/9.jpg",
+      mostrar:false
+    },
+    30:{
+      url: "./assets/imagenes/cartas/10.jpg",
+      mostrar:false
+    },
+    31:{
+      url: "./assets/imagenes/cartas/1.jpg",
+      mostrar:false
+    },
+    32:{
+      url: "./assets/imagenes/cartas/2.jpg",
+      mostrar:false
+    },
+    33:{
+      url: "./assets/imagenes/cartas/3.jpg",
+      mostrar:false
+    },
+    34:{
+      url: "./assets/imagenes/cartas/4.jpg",
+      mostrar:false
+    },
+    35:{
+      url: "./assets/imagenes/cartas/5.jpg",
+      mostrar:false
+    },
+    36:{
+      url: "./assets/imagenes/cartas/6.jpg",
+      mostrar:false
+    },
+    37:{
+      url: "./assets/imagenes/cartas/7.jpg",
+      mostrar:false
+    },
+    38:{
+      url: "./assets/imagenes/cartas/8.jpg",
+      mostrar:false
+    },
+    39:{
+      url: "./assets/imagenes/cartas/9.jpg",
+      mostrar:false
+    },
+    40:{
+      url: "./assets/imagenes/cartas/10.jpg",
+      mostrar:false
+    },
+    41:{
+      url: "./assets/imagenes/cartas/1.jpg",
+      mostrar:false
+    },
+    42:{
+      url: "./assets/imagenes/cartas/2.jpg",
+      mostrar:false
+    },
+    43:{
+      url: "./assets/imagenes/cartas/3.jpg",
+      mostrar:false
+    },
+    44:{
+      url: "./assets/imagenes/cartas/4.jpg",
+      mostrar:false
+    },
+    45:{
+      url: "./assets/imagenes/cartas/5.jpg",
+      mostrar:false
+    },
+    46:{
+      url: "./assets/imagenes/cartas/6.jpg",
+      mostrar:false
+    },
+    47:{
+      url: "./assets/imagenes/cartas/7.jpg",
+      mostrar:false
+    },
+    48:{
+      url: "./assets/imagenes/cartas/8.jpg",
+      mostrar:false
+    },
+    49:{
+      url: "./assets/imagenes/cartas/9.jpg",
+      mostrar:false
+    },
+    50:{
+      url: "./assets/imagenes/cartas/10.jpg",
+      mostrar:false
+    },
+    51:{
+      url: "./assets/imagenes/cartas/1.jpg",
+      mostrar:false
+    },
+    52:{
+      url: "./assets/imagenes/cartas/2.jpg",
+      mostrar:false
+    },
+    53:{
+      url: "./assets/imagenes/cartas/3.jpg",
+      mostrar:false
+    },
+    54:{
+      url: "./assets/imagenes/cartas/4.jpg",
+      mostrar:false
+    },
+  }
+  imagenesCopia ={
+    0:{
+      url: "./assets/imagenes/cartas/1.jpg",
+      mostrar:false
+    }
   }
   constructor() {
     
@@ -101,15 +256,24 @@ export class HomePage implements OnInit{
     $.getJSON("./assets/Texto para las imagenes.json",a=>{
       this.textoDeImagene = a
     })
-    $.getJSON("./assets/cantidad.json",a=>{
+    $.getJSON("./assets/cantidadCartas.json",a=>{
       this.cantidad= a.cantidad
+    }).then(a=>{
+    
+    console.log(this.cantidad)
+    
+    for (var i=0; i<this.cantidad; i++){
+      this.imagenesCopia[i] = this.imagenesBase[i]; 
+      console.log(this.imagenesCopia)
+    }    
     })
-    this.imagenesCopia = this.imagenesBase 
+
+    
     this.audioDeFondo.src = "./assets/Audio/fondo.mp3"
     this.audioDeFondo.loop = true
     this.audioDeFondo.volume = 0.5
     this.audioLanzamiento.src = "./assets/Audio/lanzamiento.mp3"
-    this.audioDeFondo.play()
+    //this.audioDeFondo.play()
     this.audioLanzamiento.volume = 0.5
     let a = await this.getVoice()
     
@@ -118,6 +282,8 @@ export class HomePage implements OnInit{
 
   
   mezclar(){
+   
+    console.log(this.imagenesCopia)
     setTimeout(a=>{
       this.audioDeFondo.pause()
     }, 120)
@@ -165,7 +331,9 @@ export class HomePage implements OnInit{
       
     }
     this.usados=[]
-    this.imagenesCopia=this.imagenesBase
+    for(let i in this.imagenesCopia){
+      this.imagenesCopia[i].mostrar=false
+    }
 
   }
 
