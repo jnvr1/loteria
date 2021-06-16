@@ -1,0 +1,40 @@
+
+<!--<audio autoplay="autoplay" controls="controls" hidden  loop [volume]="0.2">
+  <source src="../../assets/Audio/pacman.mp3" />     
+</audio>
+-->
+<ion-content [fullscreen]="true">
+
+  <ion-button  (click)="cerrar()" class="apagado">
+    <ion-icon name="power"></ion-icon>
+  </ion-button>
+
+  <ion-button class="apagado" (click)="reiniciar()">
+    <ion-icon name="reload"></ion-icon>
+  </ion-button>
+  
+<div class="botonCarta">
+  
+  <ion-img src="./assets/botones/jugar.gif" (click)="jugar=!jugar" *ngIf="!jugar" class="jugar">
+
+  </ion-img>
+  
+  <div *ngIf="jugar" class="mostrar">
+    <ion-item *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
+      <ion-img src="{{imagenesBase[ran].url}}" ></ion-img>
+    </ion-item>  
+    <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar()" class="mezclar">
+    </ion-img>
+  </div>
+  <!--<ion-item *ngFor="let i of imagenesBase |keyvalue">
+    <ion-item *ngIf="i.value.mostrar">
+      <ion-img  src="{{i.value.url}}">
+
+      </ion-img>
+    </ion-item>
+  </ion-item>
+-->
+  
+
+</div>
+</ion-content>
