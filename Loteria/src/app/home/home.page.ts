@@ -14,6 +14,7 @@ export class HomePage implements OnInit{
   textoDeImagene
  jugar=false
  cantidad
+ 
   ran=0; audioDeFondo = new Audio();
  audioLanzamiento = new Audio()
  usados = new Array();

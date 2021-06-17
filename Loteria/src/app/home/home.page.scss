@@ -35,7 +35,8 @@ ion-content{
 }
 
 .botonCarta{
-  
+  position: relative;
+  z-index: 950;
   ion-button{
     margin-top: 2%;
     margin-left: 45%;
@@ -86,7 +87,60 @@ ion-content{
 .grid{
   margin-top: 0;
   margin-left: 0;
+  z-index: 900;
   position: absolute;
-  width: 250px;
-  height: 250px;
+  display: grid; 
+  grid-auto-flow: column dense; 
+  grid-template-columns: 0.5fr 0.5fr 0.5fr; 
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr; 
+  gap: 1% 1%; 
+  grid-template-areas: 
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."; 
+  height: 90%;
+  ion-item{
+    margin-top: 5%;
+    padding: auto;
+    height: 70px;
+    width: 150px;
+    
+  }
+  
 }
+.grid2{
+  margin-top: 0;
+  margin-left: 70%;
+  position: absolute;  
+  display: grid; 
+  grid-auto-flow: column dense; 
+  grid-template-columns: 0.5fr 0.5fr 0.5fr; 
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr; 
+  gap: 1% 1%; 
+  grid-template-areas: 
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."; 
+  height: 90%;
+  ion-item{
+    margin-top: 5%;
+    padding: auto;
+    height: 70px;
+    width: 150px;
+    
+  }
+  
+}
+
