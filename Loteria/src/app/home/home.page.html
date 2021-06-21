@@ -3,15 +3,18 @@
   <source src="../../assets/Audio/pacman.mp3" />     
 </audio>
 -->
+
 <ion-content [fullscreen]="true">
 
-  <ion-button  (click)="cerrar()" class="apagado" color="danger">
-    <ion-icon name="power"></ion-icon>
-  </ion-button>
-
-  <ion-button class="apagado" (click)="reiniciar()">
-    <ion-icon name="reload"></ion-icon>
-  </ion-button>
+  <div id="botones">
+    <ion-button id="apagado" (click)="cerrar()" class="apagado" color="danger">
+      <ion-icon name="power"></ion-icon>
+    </ion-button>
+  
+    <ion-button class="reiniciar" (click)="reiniciar()">
+      <ion-icon name="reload"></ion-icon>
+    </ion-button>
+  </div>
   
   <div  class="grid" *ngIf="jugar" >
     <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:1:(cantidad+1-(cantidad)/2);let ind =index" color="transparent" >
@@ -39,8 +42,8 @@
           </ion-img>
         </ion-item>
         
-        <ng-template #elseBlock>
-          <ion-img  src="./assets/imagenes/fondo/carga.jpg">
+        <ng-template #elseBlock style="background-color: mediumpurple">
+          <ion-img  src="./assets/imagenes/fondo/carga2.png">
       
           </ion-img>
         </ng-template>
@@ -50,7 +53,7 @@
  
 <div class="botonCarta">
   
-  <ion-img src="./assets/botones/jugar.gif" (click)="mezclar()" *ngIf="!jugar" class="jugar">
+  <ion-img src="./assets/botones/jugar.gif" (click)="mezclar('')" *ngIf="!jugar" class="jugar">
 
   </ion-img>
   
@@ -58,7 +61,7 @@
     <ion-item *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
       <ion-img src="{{imagenesBase[ran].url}}" ></ion-img>
     </ion-item>  
-    <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar()" class="mezclar">
+    <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar('')" class="mezclar">
     </ion-img>    
   </div> 
 

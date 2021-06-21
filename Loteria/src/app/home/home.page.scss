@@ -47,6 +47,19 @@ ion-content{
 .apagado{
   margin-top: 2%;
   margin-left: 2%;
+  visibility: hidden;
+  
+}
+
+
+.reiniciar{
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+ion-button:hover{
+  background-color: aqua !important;
+  visibility: visible;
 }
 .imagen{
   height: 50%;

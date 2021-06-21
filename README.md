@@ -1,4 +1,4 @@
-# loteria
+# loteria APP
 
 ## Instalación primera vez
 
@@ -66,3 +66,11 @@ La segunda ejecución es mas sencilla dado que ya estan todas las librerias nece
  npm run windows-release
 
 ```
+
+## Autor
+
+Jonathan Noe Viramontes Ramirez
+
+jonathan.viramontes.ramirez@gmail.com
+
+656-698-8971

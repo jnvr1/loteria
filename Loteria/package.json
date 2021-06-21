@@ -1,8 +1,8 @@
 {
   "name": "Loteria",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "JNVR",
+  "homepage": "",
   "main": "src/electron-starter.js",
   "scripts": {
     "ng": "ng",
