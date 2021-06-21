@@ -254,6 +254,11 @@ export class HomePage implements OnInit{
     
   }
   async ngOnInit(){
+    window.addEventListener("keydown",a=>{
+      if(a.key=="0"){
+        this.mezclar()
+      }
+    })
     $.getJSON("./assets/Texto para las imagenes.json",a=>{
       this.textoDeImagene = a
     })
@@ -288,13 +293,17 @@ export class HomePage implements OnInit{
     setTimeout(a=>{
       this.audioDeFondo.pause()
     }, 120)
-
-    this.ran = this.aleatorio()
+    if(this.jugar == false){
+      this.jugar = true
+    }else{
+      this.ran = this.aleatorio()
       if(this.ran != 0){
         this.lanzar()
       }else{
         this.reiniciar()
       }
+    }
+    
       
     
   }
