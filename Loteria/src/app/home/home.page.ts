@@ -253,7 +253,23 @@ export class HomePage implements OnInit{
   constructor() {
     
   }
-  async ngOnInit(){
+  async ngOnInit(){ 
+    
+    document.getElementsByClassName("apagado")
+    window.addEventListener("keydown",a=>{
+      if(a.key=="0"){
+        this.mezclar("")
+      }
+      if(a.key=="1"){
+        this.automatico(0)
+      }
+      if(a.key == "r"){
+        this.reiniciar()
+      }
+      if(a.key == "Escape"){
+        this.cerrar()
+      }
+    })
     $.getJSON("./assets/Texto para las imagenes.json",a=>{
       this.textoDeImagene = a
     })
@@ -261,11 +277,11 @@ export class HomePage implements OnInit{
       this.cantidad= a.cantidad
     }).then(a=>{
     
-    console.log(this.cantidad)
+    
     
     for (var i=0; i<this.cantidad; i++){
       this.imagenesCopia[i] = this.imagenesBase[i]; 
-      console.log(this.imagenesCopia)
+      
     }    
     })
 
@@ -282,19 +298,24 @@ export class HomePage implements OnInit{
   }
 
   
-  mezclar(){
+  mezclar(interval){
    
-    console.log(this.imagenesCopia)
+    
     setTimeout(a=>{
       this.audioDeFondo.pause()
     }, 120)
-
-    this.ran = this.aleatorio()
+    if(this.jugar == false){
+      this.jugar = true
+    }else{
+      this.ran = this.aleatorio()
       if(this.ran != 0){
         this.lanzar()
       }else{
+        clearInterval(interval)
         this.reiniciar()
       }
+    }
+    
       
     
   }
@@ -325,8 +346,9 @@ export class HomePage implements OnInit{
   }
 
   reiniciar(){
-    this.jugar=!this.jugar
+    this.jugar=false
     this.audioDeFondo.play()
+    speechSynthesis.cancel()
     for(let i in this.imagenesBase){
       this.imagenesBase[i].mostrar=false
       
@@ -355,7 +377,7 @@ export class HomePage implements OnInit{
         this.usados.push(num);
         return num;
       } else {
-        console.log(this.usados)
+        
         return 0;
       }
     }
@@ -378,5 +400,20 @@ export class HomePage implements OnInit{
       posibleIndice = this.vocesDisponibles.findIndex(voz => this.IDIOMAS_PREFERIDOS.includes(voz.lang));
       return this.vocesDisponibles
   }
+
+  automatico(n){
+    if(n==0){
+      this.mezclar("")
+      n++
+    }
+     var auto=setInterval(a=>{
+        this.mezclar(auto)
+        console.log("simon")
+      },50)
+    
+
+  }
+
+ 
 
 }

@@ -1,8 +1,8 @@
 {
   "name": "Loteria",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "JNVR",
+  "homepage": "",
   "main": "src/electron-starter.js",
   "scripts": {
     "ng": "ng",
@@ -13,7 +13,7 @@
     "e2e": "ng e2e",
     "electron": "electron .",
     "electron-serve": "ng build --prod && electron .",
-    "mac-release": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icon.icns --prune=true --out=Ejecutable",
+    "mac-release": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=./assets/icon.icns --prune=true --out=Ejecutable",
     "windows-release": "electron-packager . Loteria --overwrite --asar=true --platform=win32 --arch=ia32 --icon=./src/assets/icon.ico --prune=true --out=Ejecutable --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Loteria'",
     "linux-release": "electron-packager . Loteria --overwrite --asar=true --platform=linux --arch=x64 --icon=./src/assets/icon.png --prune=true --out=Ejecutable",
     "mac-build": "electron-installer-dmg ./release-builds/ionic-desktop-darwin-x64/ionic-desktop.app builds/ionic-desktop",

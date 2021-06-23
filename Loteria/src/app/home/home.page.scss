@@ -47,6 +47,19 @@ ion-content{
 .apagado{
   margin-top: 2%;
   margin-left: 2%;
+  visibility: hidden;
+  
+}
+
+
+.reiniciar{
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.apagadeo ion-button:hover{
+  background-color: aqua !important;
+  visibility: visible;
 }
 .imagen{
   height: 50%;
@@ -90,10 +103,9 @@ ion-content{
   z-index: 900;
   position: absolute;
   display: grid; 
-  grid-auto-flow: column dense; 
-  grid-template-columns: 0.5fr 0.5fr 0.5fr; 
-  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr; 
-  gap: 1% 1%; 
+  grid-template-columns: 7.5em 7.5em 7.5em; 
+  grid-template-rows: 4em 4em 4em 4em 4em 4em 4em 4em 4em; 
+  gap: 0.5em 0.5em; 
   grid-template-areas: 
     ". . ."
     ". . ."
@@ -103,7 +115,7 @@ ion-content{
     ". . ."
     ". . ."
     ". . ."
-    ". . ."; 
+    ". . .";
   height: 90%;
   ion-item{
     margin-top: 5%;
@@ -119,10 +131,10 @@ ion-content{
   margin-left: 70%;
   position: absolute;  
   display: grid; 
-  grid-auto-flow: column dense; 
-  grid-template-columns: 0.5fr 0.5fr 0.5fr; 
-  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr; 
-  gap: 1% 1%; 
+  
+  grid-template-columns: 7.5em 7.5em 7.5em; 
+  grid-template-rows: 4em 4em 4em 4em 4em 4em 4em 4em 4em; 
+  gap: 0.5em 0.5em; 
   grid-template-areas: 
     ". . ."
     ". . ."

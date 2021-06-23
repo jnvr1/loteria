@@ -3,64 +3,67 @@
   <source src="../../assets/Audio/pacman.mp3" />     
 </audio>
 -->
+
 <ion-content [fullscreen]="true">
 
-  <ion-button  (click)="cerrar()" class="apagado" color="danger">
+  
+  <ion-button id="apagado" (click)="cerrar()" class="apagado" color="danger">
     <ion-icon name="power"></ion-icon>
   </ion-button>
 
-  <ion-button class="apagado" (click)="reiniciar()">
+  <ion-button class="reiniciar" (click)="reiniciar()">
     <ion-icon name="reload"></ion-icon>
   </ion-button>
-  
-  <div  class="grid" *ngIf="jugar" >
-    <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:1:(cantidad+1-(cantidad)/2);let ind =index" color="transparent" >
-      <div>
-        <ion-item *ngIf="i.value.mostrar; else elseBlock" color="transparent">
-          <ion-img  src="{{i.value.url}}">
-      
-          </ion-img>
-        </ion-item>
-        
-        <ng-template #elseBlock>
-          <ion-img  src="./assets/imagenes/fondo/carga.jpg">
-      
-          </ion-img>
-        </ng-template>
-      </div>
-    </ion-item> 
-  </div>
-  <div *ngIf="jugar" class="grid2">
-    <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:(cantidad+1-(cantidad)/2):cantidad; let ind = index" color="transparent">
-      <div>
-        <ion-item *ngIf="i.value.mostrar; else elseBlock" color="transparent">
-          <ion-img  src="{{i.value.url}}">
-      
-          </ion-img>
-        </ion-item>
-        
-        <ng-template #elseBlock>
-          <ion-img  src="./assets/imagenes/fondo/carga.jpg">
-      
-          </ion-img>
-        </ng-template>
-      </div>
-    </ion-item>
-  </div>
- 
-<div class="botonCarta">
-  
-  <ion-img src="./assets/botones/jugar.gif" (click)="jugar=!jugar" *ngIf="!jugar" class="jugar">
 
-  </ion-img>
-  
-  <div *ngIf="jugar" class="mostrar">
-    <ion-item *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
-      <ion-img src="{{imagenesBase[ran].url}}" ></ion-img>
-    </ion-item>  
-    <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar()" class="mezclar">
-    </ion-img>    
-  </div> 
+
+<div  class="grid" *ngIf="jugar" >
+  <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:1:(cantidad+1-(cantidad)/2);let ind =index" color="transparent" >
+    <div>
+      <ion-item *ngIf="i.value.mostrar; else elseBlock" color="transparent">
+        <ion-img  src="{{i.value.url}}">
+    
+        </ion-img>
+      </ion-item>
+      
+      <ng-template #elseBlock>
+        <ion-img  src="./assets/imagenes/fondo/carga.jpg">
+    
+        </ion-img>
+      </ng-template>
+    </div>
+  </ion-item> 
+</div>
+<div *ngIf="jugar" class="grid2">
+  <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:(cantidad+1-(cantidad)/2):cantidad; let ind = index" color="transparent">
+    <div>
+      <ion-item *ngIf="i.value.mostrar; else elseBlock" color="transparent">
+        <ion-img  src="{{i.value.url}}">
+    
+        </ion-img>
+      </ion-item>
+      
+      <ng-template #elseBlock style="background-color: mediumpurple">
+        <ion-img  src="./assets/imagenes/fondo/carga2.png">
+    
+        </ion-img>
+      </ng-template>
+    </div>
+  </ion-item>
+</div>
+
+<div class="botonCarta">
+
+<ion-img src="./assets/botones/jugar.gif" (click)="mezclar('')" *ngIf="!jugar" class="jugar">
+
+</ion-img>
+
+<div *ngIf="jugar" class="mostrar">
+  <ion-item *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
+    <ion-img src="{{imagenesBase[ran].url}}" ></ion-img>
+  </ion-item>  
+  <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar('')" class="mezclar">
+  </ion-img>    
+</div> 
 
 </div>
 
