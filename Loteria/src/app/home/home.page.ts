@@ -408,8 +408,7 @@ export class HomePage implements OnInit{
     }
      var auto=setInterval(a=>{
         this.mezclar(auto)
-        console.log("simon")
-      },50)
+      },4000)
     
 
   }
