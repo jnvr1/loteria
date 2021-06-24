@@ -13,14 +13,14 @@ export class HomePage implements OnInit{
   url:any="./assets/imagenes/cartas/1.jpg"
   textoDeImagene
  jugar=false
- cantidad
+ cantidad; auto=0
  
   ran=0; audioDeFondo = new Audio();
  audioLanzamiento = new Audio()
  usados = new Array();
  IDIOMAS_PREFERIDOS = ["es-MX", "es-US", "es-ES", "es_US", "es_ES"];
  vocesDisponibles = []; 
- 
+ inter
  
  imagenesBase = {
     0:{
@@ -258,10 +258,15 @@ export class HomePage implements OnInit{
     document.getElementsByClassName("apagado")
     window.addEventListener("keydown",a=>{
       if(a.key=="0"){
-        this.mezclar("")
+        if(this.auto==1){
+          clearInterval(this.inter)
+          this.auto=0
+        }else{
+          this.mezclar() 
+        }
       }
       if(a.key=="1"){
-        this.automatico(0)
+        this.automatico()
       }
       if(a.key == "r"){
         this.reiniciar()
@@ -298,7 +303,7 @@ export class HomePage implements OnInit{
   }
 
   
-  mezclar(interval){
+  mezclar(){
    
     
     setTimeout(a=>{
@@ -311,7 +316,7 @@ export class HomePage implements OnInit{
       if(this.ran != 0){
         this.lanzar()
       }else{
-        clearInterval(interval)
+        clearInterval(this.inter)
         this.reiniciar()
       }
     }
@@ -347,6 +352,8 @@ export class HomePage implements OnInit{
 
   reiniciar(){
     this.jugar=false
+    clearInterval(this.inter)
+    this.auto=0
     this.audioDeFondo.play()
     speechSynthesis.cancel()
     for(let i in this.imagenesBase){
@@ -401,15 +408,15 @@ export class HomePage implements OnInit{
       return this.vocesDisponibles
   }
 
-  automatico(n){
-    if(n==0){
-      this.mezclar("")
-      n++
-    }
-     var auto=setInterval(a=>{
-        this.mezclar(auto)
+  automatico(){
+    if(this.auto==0){
+      this.mezclar()
+      this.auto=1
+      this.inter=setInterval(a=>{
+        this.mezclar()
       },4000)
-    
+    }
+     
 
   }
 
