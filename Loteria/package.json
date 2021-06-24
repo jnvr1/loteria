@@ -15,7 +15,7 @@
     "electron-serve": "ng build --prod && electron .",
     "mac-release": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=./assets/icon.icns --prune=true --out=Ejecutable",
     "windows-release": "electron-packager . Loteria --overwrite --asar=true --platform=win32 --arch=ia32 --icon=./src/assets/icon.ico --prune=true --out=Ejecutable --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Loteria'",
-    "linux-release": "electron-packager . Loteria --overwrite --asar=true --platform=linux --arch=x64 --icon=./src/assets/icon.png --prune=true --out=Ejecutable",
+    "linux-release": "electron-packager . Loteria --overwrite --asar=true --platform=linux deb tar.xz --arch=x64 --icon=./src/assets/icon.png --prune=true --out=Ejecutable",
     "mac-build": "electron-installer-dmg ./release-builds/ionic-desktop-darwin-x64/ionic-desktop.app builds/ionic-desktop",
     "windows-build": "node src/windows-build.js"
   },
