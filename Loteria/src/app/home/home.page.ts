@@ -261,6 +261,7 @@ export class HomePage implements OnInit{
         if(this.auto==1){
           clearInterval(this.inter)
           this.auto=0
+          this.mezclar()
         }else{
           this.mezclar() 
         }
@@ -410,7 +411,6 @@ export class HomePage implements OnInit{
 
   automatico(){
     if(this.auto==0){
-      this.mezclar()
       this.auto=1
       this.inter=setInterval(a=>{
         this.mezclar()

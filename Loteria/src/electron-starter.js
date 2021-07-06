@@ -20,7 +20,8 @@ mainWindow = new BrowserWindow({
     titleBarStyle: 'hidden', 
     webPreferences: {
     devTools: false
-    }
+    },
+    fullscreen: true
 });
 mainWindow.maximize()
 

@@ -53,7 +53,7 @@
 
 <div class="botonCarta">
 
-<ion-img src="./assets/botones/jugar.gif" (click)="mezclar('')" *ngIf="!jugar" class="jugar">
+<ion-img src="./assets/botones/jugar.gif" (click)="mezclar()" *ngIf="!jugar" class="jugar">
 
 </ion-img>
 
@@ -61,7 +61,7 @@
   <ion-item *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
     <ion-img src="{{imagenesBase[ran].url}}" ></ion-img>
   </ion-item>  
-  <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar('')" class="mezclar">
+  <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar()" class="mezclar">
   </ion-img>    
 </div> 
 
