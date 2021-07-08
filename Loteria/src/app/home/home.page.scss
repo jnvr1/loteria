@@ -28,7 +28,8 @@
 
 ion-content{
   --background: none;
-  background-image: url('../../assets/imagenes/fondo/fondo.gif');
+  background-color: black;
+  background-image: url('../../assets/imagenes/fondo/fondo.gif') ;
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,9 +81,9 @@ ion-content{
   cursor: pointer;
 }
 .mostrar{
-  margin-left: auto;
+  margin-left: 19%;
   margin-right: auto;
-  width: 35%;
+  width: 55%;
   height: 100%;
 }
 
@@ -94,7 +95,7 @@ ion-content{
   margin: 3px;
   padding: 3px;
   cursor: pointer;
-  margin-left: 30%;
+  margin-left: 45%;
 }
 
 .grid{
@@ -128,7 +129,7 @@ ion-content{
 }
 .grid2{
   margin-top: 0;
-  margin-left: 70%;
+  margin-left: 77%;
   position: absolute;  
   display: grid; 
   

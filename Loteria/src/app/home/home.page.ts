@@ -18,6 +18,7 @@ export class HomePage implements OnInit{
   ran=0; audioDeFondo = new Audio();
  audioLanzamiento = new Audio()
  usados = new Array();
+ primer_auto=true
  IDIOMAS_PREFERIDOS = ["es-MX", "es-US", "es-ES", "es_US", "es_ES"];
  vocesDisponibles = []; 
  inter
@@ -96,151 +97,151 @@ export class HomePage implements OnInit{
       mostrar:false
     },
     18:{
-      url: "./assets/imagenes/cartas/17.jpg",
+      url: "./assets/imagenes/cartas/18.jpg",
       mostrar:false
     },
     19:{
-      url: "./assets/imagenes/cartas/17.jpg",
+      url: "./assets/imagenes/cartas/19.jpg",
       mostrar:false
     },
     20:{
-      url: "./assets/imagenes/cartas/17.jpg",
+      url: "./assets/imagenes/cartas/20.jpg",
       mostrar:false
     },
     21:{
-      url: "./assets/imagenes/cartas/1.jpg",
+      url: "./assets/imagenes/cartas/21.jpg",
       mostrar:false
     },
     22:{
-      url: "./assets/imagenes/cartas/2.jpg",
+      url: "./assets/imagenes/cartas/22.jpg",
       mostrar:false
     },
     23:{
-      url: "./assets/imagenes/cartas/3.jpg",
+      url: "./assets/imagenes/cartas/23.jpg",
       mostrar:false
     },
     24:{
-      url: "./assets/imagenes/cartas/4.jpg",
+      url: "./assets/imagenes/cartas/24.jpg",
       mostrar:false
     },
     25:{
-      url: "./assets/imagenes/cartas/5.jpg",
+      url: "./assets/imagenes/cartas/25.jpg",
       mostrar:false
     },
     26:{
-      url: "./assets/imagenes/cartas/6.jpg",
+      url: "./assets/imagenes/cartas/26.jpg",
       mostrar:false
     },
     27:{
-      url: "./assets/imagenes/cartas/7.jpg",
+      url: "./assets/imagenes/cartas/27.jpg",
       mostrar:false
     },
     28:{
-      url: "./assets/imagenes/cartas/8.jpg",
+      url: "./assets/imagenes/cartas/28.jpg",
       mostrar:false
     },
     29:{
-      url: "./assets/imagenes/cartas/9.jpg",
+      url: "./assets/imagenes/cartas/29.jpg",
       mostrar:false
     },
     30:{
-      url: "./assets/imagenes/cartas/10.jpg",
+      url: "./assets/imagenes/cartas/30.jpg",
       mostrar:false
     },
     31:{
-      url: "./assets/imagenes/cartas/1.jpg",
+      url: "./assets/imagenes/cartas/31.jpg",
       mostrar:false
     },
     32:{
-      url: "./assets/imagenes/cartas/2.jpg",
+      url: "./assets/imagenes/cartas/32.jpg",
       mostrar:false
     },
     33:{
-      url: "./assets/imagenes/cartas/3.jpg",
+      url: "./assets/imagenes/cartas/33.jpg",
       mostrar:false
     },
     34:{
-      url: "./assets/imagenes/cartas/4.jpg",
+      url: "./assets/imagenes/cartas/34.jpg",
       mostrar:false
     },
     35:{
-      url: "./assets/imagenes/cartas/5.jpg",
+      url: "./assets/imagenes/cartas/35.jpg",
       mostrar:false
     },
     36:{
-      url: "./assets/imagenes/cartas/6.jpg",
+      url: "./assets/imagenes/cartas/36.jpg",
       mostrar:false
     },
     37:{
-      url: "./assets/imagenes/cartas/7.jpg",
+      url: "./assets/imagenes/cartas/37.jpg",
       mostrar:false
     },
     38:{
-      url: "./assets/imagenes/cartas/8.jpg",
+      url: "./assets/imagenes/cartas/38.jpg",
       mostrar:false
     },
     39:{
-      url: "./assets/imagenes/cartas/9.jpg",
+      url: "./assets/imagenes/cartas/39.jpg",
       mostrar:false
     },
     40:{
-      url: "./assets/imagenes/cartas/10.jpg",
+      url: "./assets/imagenes/cartas/40.jpg",
       mostrar:false
     },
     41:{
-      url: "./assets/imagenes/cartas/1.jpg",
+      url: "./assets/imagenes/cartas/41.jpg",
       mostrar:false
     },
     42:{
-      url: "./assets/imagenes/cartas/2.jpg",
+      url: "./assets/imagenes/cartas/42.jpg",
       mostrar:false
     },
     43:{
-      url: "./assets/imagenes/cartas/3.jpg",
+      url: "./assets/imagenes/cartas/43.jpg",
       mostrar:false
     },
     44:{
-      url: "./assets/imagenes/cartas/4.jpg",
+      url: "./assets/imagenes/cartas/44.jpg",
       mostrar:false
     },
     45:{
-      url: "./assets/imagenes/cartas/5.jpg",
+      url: "./assets/imagenes/cartas/45.jpg",
       mostrar:false
     },
     46:{
-      url: "./assets/imagenes/cartas/6.jpg",
+      url: "./assets/imagenes/cartas/46.jpg",
       mostrar:false
     },
     47:{
-      url: "./assets/imagenes/cartas/7.jpg",
+      url: "./assets/imagenes/cartas/47.jpg",
       mostrar:false
     },
     48:{
-      url: "./assets/imagenes/cartas/8.jpg",
+      url: "./assets/imagenes/cartas/48.jpg",
       mostrar:false
     },
     49:{
-      url: "./assets/imagenes/cartas/9.jpg",
+      url: "./assets/imagenes/cartas/49.jpg",
       mostrar:false
     },
     50:{
-      url: "./assets/imagenes/cartas/10.jpg",
+      url: "./assets/imagenes/cartas/50.jpg",
       mostrar:false
     },
     51:{
-      url: "./assets/imagenes/cartas/1.jpg",
+      url: "./assets/imagenes/cartas/51.jpg",
       mostrar:false
     },
     52:{
-      url: "./assets/imagenes/cartas/2.jpg",
+      url: "./assets/imagenes/cartas/52.jpg",
       mostrar:false
     },
     53:{
-      url: "./assets/imagenes/cartas/3.jpg",
+      url: "./assets/imagenes/cartas/53.jpg",
       mostrar:false
     },
     54:{
-      url: "./assets/imagenes/cartas/4.jpg",
+      url: "./assets/imagenes/cartas/54.jpg",
       mostrar:false
     },
   }
@@ -280,7 +281,7 @@ export class HomePage implements OnInit{
       this.textoDeImagene = a
     })
     $.getJSON("./assets/cantidadCartas.json",a=>{
-      this.cantidad= a.cantidad
+      this.cantidad= a.cantidad+1
     }).then(a=>{
     
     
@@ -296,7 +297,7 @@ export class HomePage implements OnInit{
     this.audioDeFondo.loop = true
     this.audioDeFondo.volume = 0.5
     this.audioLanzamiento.src = "./assets/Audio/lanzamiento.mp3"
-    //this.audioDeFondo.play()
+    this.audioDeFondo.play()
     this.audioLanzamiento.volume = 0.5
     let a = await this.getVoice()
     
@@ -307,10 +308,11 @@ export class HomePage implements OnInit{
   mezclar(){
    
     
-    setTimeout(a=>{
-      this.audioDeFondo.pause()
-    }, 120)
+    
     if(this.jugar == false){
+      setTimeout(a=>{
+        this.audioDeFondo.pause()
+      }, 120)
       this.jugar = true
     }else{
       this.ran = this.aleatorio()
@@ -346,7 +348,7 @@ export class HomePage implements OnInit{
     this.obtenerTexto(this.ran)
     mensaje.voice = this.vocesDisponibles[this.vocesDisponibles.length-1]
     mensaje.rate = 1
-    mensaje.volume = 3
+    mensaje.volume = 1
     mensaje.pitch = 1.5
     speechSynthesis.speak(mensaje)
   }
@@ -354,9 +356,11 @@ export class HomePage implements OnInit{
   reiniciar(){
     this.jugar=false
     clearInterval(this.inter)
-    this.auto=0
-    this.audioDeFondo.play()
     speechSynthesis.cancel()
+    this.auto=0
+    this.primer_auto=true
+    
+    
     for(let i in this.imagenesBase){
       this.imagenesBase[i].mostrar=false
       
@@ -365,6 +369,7 @@ export class HomePage implements OnInit{
     for(let i in this.imagenesCopia){
       this.imagenesCopia[i].mostrar=false
     }
+    this.audioDeFondo.play()
 
   }
 
@@ -411,10 +416,19 @@ export class HomePage implements OnInit{
 
   automatico(){
     if(this.auto==0){
-      this.auto=1
-      this.inter=setInterval(a=>{
+      
+      if(this.primer_auto){
         this.mezclar()
-      },4000)
+        this.primer_auto=false
+        this.automatico()
+      }else{
+        this.auto=1
+        this.inter=setInterval(a=>{
+          this.mezclar()
+          console.log("entro")
+        },4000)
+      }
+      
     }
      
 
