@@ -17,16 +17,16 @@
 
 
 <div  class="grid" *ngIf="jugar" >
-  <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:1:(cantidad+1-(cantidad)/2);let ind =index" color="transparent" >
+  <ion-item lines="none" *ngFor="let i of imagenesCopia |keyvalue |slice:1:(cantidad+1-(cantidad)/2);let ind =index" color="transparent" >
     <div>
-      <ion-item *ngIf="i.value.mostrar; else elseBlock" color="transparent">
-        <ion-img  src="{{i.value.url}}">
+      
+        <ion-img *ngIf="i.value.mostrar; else elseBlock" color="transparent" src="{{i.value.url}}"  class="cartaChica">
     
         </ion-img>
-      </ion-item>
+      
       
       <ng-template #elseBlock>
-        <ion-img  src="./assets/imagenes/fondo/carga2.png">
+        <ion-img   src="./assets/imagenes/fondo/carga2.png"  class="cartaChica">
     
         </ion-img>
       </ng-template>
@@ -34,16 +34,16 @@
   </ion-item> 
 </div>
 <div *ngIf="jugar" class="grid2">
-  <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:(cantidad+1-(cantidad)/2):cantidad; let ind = index" color="transparent">
+  <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:(cantidad+1-(cantidad)/2):cantidad; let ind = index" color="transparent" lines="none">
     <div>
-      <ion-item *ngIf="i.value.mostrar; else elseBlock" color="transparent">
-        <ion-img  src="{{i.value.url}}">
+      
+        <ion-img *ngIf="i.value.mostrar; else elseBlock" color="transparent"  src="{{i.value.url}}"  class="cartaChica">
     
         </ion-img>
-      </ion-item>
+      
       
       <ng-template #elseBlock style="background-color: mediumpurple">
-        <ion-img  src="./assets/imagenes/fondo/carga2.png">
+        <ion-img  src="./assets/imagenes/fondo/carga2.png" class="cartaChica">
     
         </ion-img>
       </ng-template>
@@ -58,7 +58,7 @@
 </ion-img>
 
 <div *ngIf="jugar" class="mostrar">
-  <ion-item *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
+  <ion-item lines="none" *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
     <ion-img src="{{imagenesBase[ran].url}}" ></ion-img>
   </ion-item>  
   <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar()" class="mezclar">
