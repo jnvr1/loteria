@@ -6,66 +6,70 @@
 
 <ion-content [fullscreen]="true">
 
+  <div id="juego" class="juego">
+    <ion-button id="apagado" (click)="cerrar()" class="apagado" color="danger">
+      <ion-icon name="power"></ion-icon>
+    </ion-button>
   
-  <ion-button id="apagado" (click)="cerrar()" class="apagado" color="danger">
-    <ion-icon name="power"></ion-icon>
-  </ion-button>
-
-  <ion-button class="reiniciar" (click)="reiniciar()">
-    <ion-icon name="reload"></ion-icon>
-  </ion-button>
-
-
-<div  class="grid" *ngIf="jugar" >
-  <ion-item lines="none" *ngFor="let i of imagenesCopia |keyvalue |slice:1:(cantidad+1-(cantidad)/2);let ind =index" color="transparent" >
-    <div>
-      
-        <ion-img *ngIf="i.value.mostrar; else elseBlock" color="transparent" src="{{i.value.url}}"  class="cartaChica">
-    
-        </ion-img>
-      
-      
-      <ng-template #elseBlock>
-        <ion-img   src="./assets/imagenes/fondo/carga.png"  class="cartaChica">
-    
-        </ion-img>
-      </ng-template>
+    <ion-button class="reiniciar" (click)="reiniciar()">
+      <ion-icon name="reload"></ion-icon>
+    </ion-button>
+  
+  
+    <div  class="grid" *ngIf="jugar" >
+      <ion-item lines="none" *ngFor="let i of imagenesCopia |keyvalue |slice:1:(cantidad+1-(cantidad)/2);let ind =index" color="transparent" >
+        <div>
+          
+            <ion-img *ngIf="i.value.mostrar; else elseBlock" color="transparent" src="{{i.value.url}}"  class="cartaChica">
+        
+            </ion-img>
+          
+          
+          <ng-template #elseBlock>
+            <ion-img   src="./assets/imagenes/fondo/carga.png"  class="cartaChica">
+        
+            </ion-img>
+          </ng-template>
+        </div>
+      </ion-item> 
     </div>
-  </ion-item> 
-</div>
-<div *ngIf="jugar" class="grid2">
-  <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:(cantidad+1-(cantidad)/2):cantidad; let ind = index" color="transparent" lines="none">
-    <div>
-      
-        <ion-img *ngIf="i.value.mostrar; else elseBlock" color="transparent"  src="{{i.value.url}}"  class="cartaChica">
-    
-        </ion-img>
-      
-      
-      <ng-template #elseBlock style="background-color: mediumpurple">
-        <ion-img  src="./assets/imagenes/fondo/carga.png" class="cartaChica">
-    
-        </ion-img>
-      </ng-template>
+    <div *ngIf="jugar" class="grid2">
+      <ion-item *ngFor="let i of imagenesCopia |keyvalue |slice:(cantidad+1-(cantidad)/2):cantidad; let ind = index" color="transparent" lines="none">
+        <div>
+          
+            <ion-img *ngIf="i.value.mostrar; else elseBlock" color="transparent"  src="{{i.value.url}}"  class="cartaChica">
+        
+            </ion-img>
+          
+          
+          <ng-template #elseBlock style="background-color: mediumpurple">
+            <ion-img  src="./assets/imagenes/fondo/carga.png" class="cartaChica">
+        
+            </ion-img>
+          </ng-template>
+        </div>
+      </ion-item>
     </div>
-  </ion-item>
-</div>
-
-<div class="botonCarta">
-
-<ion-img src="./assets/botones/jugar.gif" (click)="mezclar()" *ngIf="!jugar" class="jugar">
-
-</ion-img>
-
-<div *ngIf="jugar" class="mostrar">
-  <ion-item lines="none" *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
-    <ion-img src="{{imagenesBase[ran].url}}" ></ion-img>
-  </ion-item>  
-  <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar()" class="mezclar">
-  </ion-img>    
-</div> 
-
-</div>
+    
+    <div class="botonCarta">
+    
+    <ion-img src="./assets/botones/jugar.gif" (click)="mezclar()" *ngIf="!jugar" class="jugar">
+    
+    </ion-img>
+    
+    <div *ngIf="jugar" class="mostrar">
+      <ion-item lines="none" *ngIf="imagenesBase[ran].mostrar" color="transparent" class="imagen">
+        <ion-img src="{{imagenesBase[ran].url}}" ></ion-img>
+      </ion-item>  
+      <ion-img src="./assets/botones/lanzar.gif" (click)="mezclar()" class="mezclar">
+      </ion-img>    
+    </div> 
+    
+    </div>
+  </div>
+  <div id="ganador" class="ganador">
+    
+  </div>
 
 
 </ion-content>

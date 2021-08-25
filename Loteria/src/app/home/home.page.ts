@@ -19,7 +19,7 @@ export class HomePage implements OnInit{
  audioLanzamiento = new Audio()
  usados = new Array();
  primer_auto=true
- IDIOMAS_PREFERIDOS = ["es-MX", "es-US", "es-ES", "es_US", "es_ES"];
+ IDIOMAS_PREFERIDOS = ["es-MX", "es-ES"];
  vocesDisponibles = []; 
  inter
  
@@ -291,8 +291,8 @@ export class HomePage implements OnInit{
       
     }    
     })
-
     
+    this.audioDeFondo = new Audio()
     this.audioDeFondo.src = "./assets/Audio/fondo.mp3"
     this.audioDeFondo.loop = true
     this.audioDeFondo.volume = 0.5
@@ -346,32 +346,65 @@ export class HomePage implements OnInit{
     var mensaje  = new SpeechSynthesisUtterance();
     mensaje.text = this.obtenerTexto(this.ran)
     this.obtenerTexto(this.ran)
-    mensaje.voice = this.vocesDisponibles[this.vocesDisponibles.length-1]
+   //console.log(this.vocesDisponibles)
+    mensaje.voice = this.vocesDisponibles[10]
     mensaje.rate = 1
     mensaje.volume = 1
-    mensaje.pitch = 1.5
+    mensaje.pitch = 1
     speechSynthesis.speak(mensaje)
   }
 
   reiniciar(){
-    this.jugar=false
-    clearInterval(this.inter)
-    speechSynthesis.cancel()
-    this.auto=0
-    this.primer_auto=true
-    
-    
-    for(let i in this.imagenesBase){
-      this.imagenesBase[i].mostrar=false
+    if(this.jugar){
+      this.audioDeFondo.pause()
+      var video = document.createElement('video');
+      var juego = document.getElementById("juego")
+      var ganador = document.getElementById("ganador")
+      juego.style.visibility = "hidden"
+      ganador.style.visibility = "visible"
+      ganador.style.opacity = "1"
+      ganador.appendChild(video)
+      video.style.position = "fixed"
+      video.style.right = "0"
+      video.style.left = "0"
+      video.style.minWidth = "100%"
+      video.style.minHeight = "100%"
+      var source = document.createElement('source');
+
+      source.src = "../../assets/Ganador/gandor.mp4";
+      source.type = "video/mp4";
+
+      video.appendChild(source);
+      video.play()
+      video.addEventListener("ended",(event)=>{
+      var juego = document.getElementById("juego")
+      var ganador = document.getElementById("ganador")
+      juego.style.visibility = "visible"
+      ganador.style.visibility = "hidden"
+      this.audioDeFondo.play()
+      this.jugar=false
+      clearInterval(this.inter)
+      speechSynthesis.cancel()
+      this.auto=0
+      this.primer_auto=true
       
+      
+      for(let i in this.imagenesBase){
+        this.imagenesBase[i].mostrar=false
+        
+      }
+      this.usados=[]
+      for(let i in this.imagenesCopia){
+        this.imagenesCopia[i].mostrar=false
+      }
+      },false)
     }
-    this.usados=[]
-    for(let i in this.imagenesCopia){
-      this.imagenesCopia[i].mostrar=false
-    }
-    this.audioDeFondo.play()
+    
+    
+    
 
   }
+  
 
   obtenerTexto(num){
     
@@ -425,7 +458,7 @@ export class HomePage implements OnInit{
         this.auto=1
         this.inter=setInterval(a=>{
           this.mezclar()
-          console.log("entro")
+          
         },4000)
       }
       

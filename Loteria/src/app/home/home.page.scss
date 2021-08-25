@@ -1,3 +1,4 @@
+
 #container {
   text-align: center;
 
@@ -168,4 +169,17 @@ ion-content{
   width: 5em;
   border: 2px solid #fff;
   border-radius: 5px;
+}
+
+.ganador{
+  visibility: hidden;
+  opacity:0;
+  transition:visibility 0.3s 0.3s ease-in,opacity 0.3s 0.3s ease-in;
+}
+#ganador{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
