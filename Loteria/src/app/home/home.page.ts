@@ -364,14 +364,9 @@ export class HomePage implements OnInit{
       ganador.style.visibility = "visible"
       ganador.style.opacity = "1"
       ganador.appendChild(video)
-      video.style.position = "fixed"
-      video.style.right = "0"
-      video.style.left = "0"
-      video.style.minWidth = "100%"
-      video.style.minHeight = "100%"
       var source = document.createElement('source');
 
-      source.src = "../../assets/Ganador/gandor.mp4";
+      source.src = "./assets/Ganador/ganador.mp4";
       source.type = "video/mp4";
 
       video.appendChild(source);
